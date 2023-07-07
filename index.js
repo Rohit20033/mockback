@@ -27,7 +27,7 @@ app.get("/",(req,res)=>{
 })
 
 app.post("/signup",async(req,res)=>{
-    const {email,password}=req.body
+    const {email,password,number}=req.body
     const existed = await userModal.findOne({email})
     
     if(existed!==null){
@@ -37,7 +37,7 @@ app.post("/signup",async(req,res)=>{
     else{
         try {
         bcrypt.hash(password, 4, async function(err, hash) {
-            const user = new userModal({email,password:hash})
+            const user = new userModal({email,password:hash,number})
             await user.save()
             res.send("Signup Completed")
          });
