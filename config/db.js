@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
 const connect = async ()=>{
-   return mongoose.connect("mongodb://127.0.0.1:27017/bug")
+   return mongoose.connect("mongodb+srv://rohitkumarprajapat303:rohit8331@cluster0.h0nkdzj.mongodb.net/vintagex?retryWrites=true&w=majority")
 }
 module.exports=connect
